@@ -1,0 +1,41 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.calculator {
+    width: 320px;
+}
+
+.btn {
+    font-size: 1.5rem;
+    width: 70px; 
+    border-radius: 100px;
+}
+
+.btn-dark {
+    background-color: #a6a6a6;
+    color: #000;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #505050;
+    color: #fff;
+    border: none;
+}
+
+.btn-warning {
+    background-color: #ff9500;
+    color: #fff;
+    border: none;
+}
+
+.display {
+    font-size: 2.5rem;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+button:active {
+    opacity: 0.8;
+}
