@@ -13,6 +13,9 @@ Este é um projeto de uma calculadora web funcional, inspirada no estilo da calc
 - Inversão de sinal (+/-)
 - Repetição da última operação ao clicar em "=" múltiplas vezes
 
+## Visualização ao vivo:
+Você pode ver o projeto rodando em [GitHub Pages](https://jkfelipe.github.io/calculadora-iphone/).
+
 ## Como utilizar:
 1. Clone este repositório: 
    ```bash
