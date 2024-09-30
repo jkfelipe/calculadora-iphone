@@ -3,29 +3,29 @@ body {
 }
 
 .calculator {
-    width: 320px;
+    width: 340px;
 }
 
 .btn {
-    font-size: 1.5rem;
-    width: 70px; 
+    font-size: 1.8rem;
+    width: 75px; 
     border-radius: 100px;
 }
 
 .btn-dark {
-    background-color: #a6a6a6;
+    background-color: #A5A5A5;
     color: #000;
     border: none;
 }
 
 .btn-secondary {
-    background-color: #505050;
+    background-color: #333333;
     color: #fff;
     border: none;
 }
 
 .btn-warning {
-    background-color: #ff9500;
+    background-color: #FF9F0A;
     color: #fff;
     border: none;
 }
