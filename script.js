@@ -34,6 +34,9 @@ let numeroConvertido;
 let valorSemFormato;
 let valorFormatado;
 
+// Variável de controle para indicar se um número decimal está sendo inserido
+let decimalInserido = false;
+
 // Função para limpar o display e resetar o estado
 function limpar() {
     display.textContent = "0";
@@ -41,6 +44,7 @@ function limpar() {
     resultadoCalculado = false;
     valorDisplay = "";
     valorSemFormato = "";
+    decimalInserido = false; // Reseta o estado do número decimal
     ac.textContent = "AC";
     ultimoOperador = "";
     ultimoValor = 0;
@@ -114,29 +118,26 @@ botoes.forEach(function(botao) {
         if (resultadoCalculado) {
             display.textContent = "0";
             resultadoCalculado = false;
+            decimalInserido = false;
         }
 
         if ((display.textContent.length === 1 && display.textContent === "0") || operacaoActive) {
+            // Reinicia o display para o número novo
             if (botao.textContent === ',') {
                 display.textContent = '0' + botao.textContent;
+                decimalInserido = true; // Marca que um decimal foi inserido
             } else {
                 display.textContent = botao.textContent;
             }
             operacaoActive = false;
         } else if (display.textContent.length <= 11) {
             if (botao.textContent === ",") {
-                if (!display.textContent.includes(",")) {
+                if (!decimalInserido) {
                     display.textContent += botao.textContent;
+                    decimalInserido = true; // Marca que a vírgula foi inserida
                 }
             } else {
-                valorSemFormato = display.textContent.replace(/\./g, '').replace(',', '.');
-                valorSemFormato += botao.textContent;
-
-                valorFormatado = parseFloat(valorSemFormato).toLocaleString('pt-BR', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 20
-                });
-                display.textContent = valorFormatado;
+                display.textContent += botao.textContent; // Adiciona os números ao display
             }
         }
     });
@@ -148,7 +149,7 @@ operacao.forEach(function(operacao) {
         operador = operacao.dataset.operador;
         valorDisplay = display.textContent.replace(/\./g, '').replace(',', '.');
         operacaoActive = true;
-        resultadoCalculado = false;
+        decimalInserido = false; // Reseta o estado do número decimal
     });
 });
 
